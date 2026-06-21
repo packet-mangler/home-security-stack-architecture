@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="Page-2" id="vvFDSuItQn4xsh4UquKu">
+    <mxGraphModel dx="1210" dy="1185" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EA6B66;strokeColor=#b85450;fontColor=#000000;verticalAlign=top;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;OPNsense Firewall&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Filterlog local0 · Suricata EVE local5 · ntopng&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="270" x="290" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-2" edge="1" parent="1" source="_pJJf5kpLFoNwWz3lUkG-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="_pJJf5kpLFoNwWz3lUkG-6" value="&lt;font size=&quot;3&quot;&gt;syslog UDP&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-3" edge="1" parent="1" source="_pJJf5kpLFoNwWz3lUkG-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="_pJJf5kpLFoNwWz3lUkG-12" value="&lt;font size=&quot;3&quot;&gt;MCP / LAN&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAD8FC;strokeColor=#7B6ED6;fontColor=#26215C;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Mini-PC · Proxmox VE&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;6-core CPU · 32 GB RAM · 512 GB NVMe&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="530" width="420" x="30" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#888780;fontColor=#2C2C2A;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Proxmox host OS&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;~4–6 GB RAM reserved&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="370" x="55" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#BA7517;fontColor=#412402;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Splunk Free VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;8 GB RAM · Lab VLAN&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;OPNsense filterlog + Suricata EVE + ntopng&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="370" x="55" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Docker host VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;4–6 GB RAM · Lab VLAN&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Portainer · opnsense-mcp · Infisical&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="370" x="55" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7C1C1;strokeColor=#A32D2D;fontColor=#501313;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Kali Linux VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;On-demand · Lab VLAN&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Pen test / offense&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="175" x="55" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Windows VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;On-demand · Lab VLAN&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Testing / analysis&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="175" x="250" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#888780;fontColor=#2C2C2A;" value="&lt;font size=&quot;3&quot;&gt;All VMs bridged to Lab VLAN (isolated segment)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="370" x="55" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#888780;fontColor=#2C2C2A;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Local storage&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;512 GB NVMe — VM disks · Splunk indexes · Docker volumes&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;NAS mount available for bulk data&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="370" x="55" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;NAS · NAS (persistent)&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Primary storage · Syslog receiver · Services VLAN&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="350" width="340" x="480" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C0DD97;strokeColor=#3B6D11;fontColor=#173404;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;orb-sensor&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Stays on NAS permanently&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="290" x="505" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#888780;fontColor=#2C2C2A;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Interim containers&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Migrating → Proxmox Docker VM&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Portainer&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;opnsense-mcp&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Infisical (target: Proxmox Docker VM)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="290" x="505" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-15" edge="1" parent="1" source="_pJJf5kpLFoNwWz3lUkG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="_pJJf5kpLFoNwWz3lUkG-7" value="&lt;font size=&quot;3&quot;&gt;migration (in progress)&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-16" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Legend&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="160" width="1950" x="30" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-17" parent="_pJJf5kpLFoNwWz3lUkG-16" style="text;whiteSpace=wrap;html=1;" value="&lt;font size=&quot;3&quot;&gt;Solid arrow → Active syslog / data flow&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="370" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-18" parent="_pJJf5kpLFoNwWz3lUkG-16" style="text;whiteSpace=wrap;html=1;" value="&lt;font size=&quot;3&quot;&gt;Dashed arrow → MCP / API connection or planned migration&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="790" x="370" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_pJJf5kpLFoNwWz3lUkG-19" parent="_pJJf5kpLFoNwWz3lUkG-16" style="text;whiteSpace=wrap;html=1;" value="&lt;font size=&quot;3&quot;&gt;Purple border = Proxmox host boundary · Teal border = NAS NAS boundary · Amber = Splunk VM · Green = permanent NAS container · Gray = infrastructure / host layer · Red = Kali (offense) · Blue = Windows&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="790" x="1160" y="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

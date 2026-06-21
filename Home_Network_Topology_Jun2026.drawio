@@ -1,0 +1,192 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="Home Network Topology" id="homeNetworkTopology">
+    <mxGraphModel dx="3149" dy="1185" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="inet-1" parent="1" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#003D82;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Internet / ISP&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="180" x="610" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="modem-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Cable Modem&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Self-provided · bridged&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="625" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="e-inet-modem" edge="1" parent="1" source="inet-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="modem-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vpn-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#330000;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;ProtonVPN&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Selective routing&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;LAN optional · IoT optional&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" x="130" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="opn-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EA6B66;strokeColor=#b85450;fontColor=#000000;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;OPNsense Firewall&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Protectli Vault · 26.1.x&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;igb0 WAN · igb1 LAN trunk · igb2 IoT&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Suricata IPS · Unbound DNS · ntopng · ProtonVPN&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Filterlog local0 · Suricata EVE local5&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="320" x="540" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FF99FF;strokeColor=#9933CC;fontColor=#330066;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;Cloudflare DoT&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;1.1.1.2 / 1.0.0.2 · port 853&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Malware blocking upstream&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;CN: security.cloudflare-dns.com&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="200" x="1070" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="e-modem-opn" edge="1" parent="1" source="modem-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="opn-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-opn-vpn" edge="1" parent="1" source="opn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="vpn-1" value="&lt;font size=&quot;2&quot;&gt;WireGuard tunnel&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-opn-cf" edge="1" parent="1" source="opn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cf-1" value="&lt;font size=&quot;2&quot;&gt;DoT / port 853&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#666666;fontColor=#333333;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;TL-SG1016DE · 16-port managed switch&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 1: OPNsense trunk (igb1) · Tagged VLAN 10/20/30&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 2: Reserved (mirror port — unassigned)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="500" x="450" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="iot-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF99CC;strokeColor=#CC0066;fontColor=#330022;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;IoT Network&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;igb2 · IOT_SUBNET.x · ~30 devices&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Direct OPNsense interface · firewall isolated&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Smart home devices · mobile&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="230" x="1070" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="e-opn-sw" edge="1" parent="1" source="opn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sw-1" value="&lt;font size=&quot;2&quot;&gt;igb1 trunk · 802.1Q&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-opn-iot" edge="1" parent="1" source="opn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="iot-1" value="&lt;font size=&quot;2&quot;&gt;igb2&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="310" />
+              <mxPoint x="1185" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vlan10-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333300;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;VLAN 10 · Office · OFFICE_SUBNET/24&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="350" width="370" x="50" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="e-sw-vlan10" edge="1" parent="1" source="sw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vlan10-bg" value="&lt;font size=&quot;2&quot;&gt;Untagged VLAN 10&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-soquiet" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333300;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Office-Desktop-1&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 3 · VLAN 10 untagged&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="70" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-oryx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333300;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Office-Laptop-1&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 5 · VLAN 10 untagged&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="250" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-gazelle" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333300;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Office-Laptop-2&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 6 · VLAN 10 untagged&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="70" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-strix" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333300;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Office-Laptop-3&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 7 · VLAN 10 untagged&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="250" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-lggram" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333300;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Office-Laptop-4&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 13 · VLAN 10 untagged&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;(wired when docked)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="160" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="vlan10-iface" parent="1" style="text;whiteSpace=wrap;html=1;fontColor=#666600;" value="&lt;font size=&quot;2&quot;&gt;OPNsense sub-interface: igb1.10&lt;/font&gt;" vertex="1">
+          <mxGeometry height="25" width="310" x="70" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="vlan20-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAD8FC;strokeColor=#7B6ED6;fontColor=#26215C;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;VLAN 20 · Lab · LAB_SUBNET/24&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="370" width="820" x="460" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="e-sw-vlan20" edge="1" parent="1" source="sw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0;entryDx=0;entryDy=0;" target="vlan20-bg" value="&lt;font size=&quot;2&quot;&gt;Untagged VLAN 20&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-r13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAD8FC;strokeColor=#7B6ED6;fontColor=#26215C;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Lab-Workstation-1&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 16 · VLAN 20 untagged · High-end GPU&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;AI inference · NAS NFS + internet only&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;No Office VLAN reach · lateral movement isolated&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="200" x="1050" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="prox-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAD8FC;strokeColor=#7B6ED6;fontColor=#26215C;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Mini-PC · Proxmox VE 9.2.3&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 4 · VLAN 20 untagged · 6-core CPU · 32 GB RAM · 512 GB NVMe&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="280" width="530" x="480" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="prox-host" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#888780;fontColor=#2C2C2A;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;Proxmox host OS&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;~4–6 GB RAM reserved&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="480" x="500" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="prox-splunk" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#BA7517;fontColor=#412402;verticalAlign=top;spacingTop=4;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;Splunk Free VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;8 GB RAM · ubuntu-2404 cloud-init clone&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;OPNsense filterlog + Suricata EVE + ntopng&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;500 MB/day ingest cap · NAS filtered relay&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="230" x="500" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="prox-docker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;verticalAlign=top;spacingTop=4;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;Docker host VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;4–6 GB RAM · ubuntu-2404 cloud-init clone&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Migration target: Portainer · opnsense-mcp · Infisical&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="230" x="750" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="prox-kali" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7C1C1;strokeColor=#A32D2D;fontColor=#501313;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;Kali Linux VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;On-demand · ISO install · pen test&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="210" x="500" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="prox-win" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;Windows VM&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;On-demand · ISO install · testing&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="210" x="750" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="vlan20-iface" parent="1" style="text;whiteSpace=wrap;html=1;fontColor=#443399;" value="&lt;font size=&quot;2&quot;&gt;OPNsense sub-interface: igb1.20 · Firewall: NAS NFS + internet only; no Office reach&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="490" x="480" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="vlan30-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;VLAN 30 · Services · SERVICES_SUBNET/24&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="300" width="1230" x="50" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="e-sw-vlan30" edge="1" parent="1" source="sw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.15;entryY=0;entryDx=0;entryDy=0;" target="vlan30-bg" value="&lt;font size=&quot;2&quot;&gt;Untagged VLAN 30&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="470" />
+              <mxPoint x="430" y="980" />
+              <mxPoint x="235" y="980" />
+              <mxPoint x="235" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nas-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;verticalAlign=top;spacingTop=6;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;NAS NAS · SERVICES_SUBNET.x&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Port 9 · VLAN 30 untagged · Primary storage · Syslog receiver&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="225" width="1170" x="80" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="nas-orb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C0DD97;strokeColor=#3B6D11;fontColor=#173404;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;orb-sensor&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Permanent · stays on NAS&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="200" x="100" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="nas-interim" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#888780;fontColor=#2C2C2A;verticalAlign=top;spacingTop=4;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;Interim containers (migrating → Proxmox Docker VM)&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Portainer&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;opnsense-mcp&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Infisical&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="240" x="330" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="nas-syslog" parent="1" style="text;whiteSpace=wrap;html=1;fontColor=#04342C;" value="&lt;font size=&quot;2&quot;&gt;Syslog: OPNsense → UDP/514 · ntopng → UDP/1514&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;2&quot;&gt;Synology Log Center · filtered relay → Splunk VM&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="460" x="100" y="1245" as="geometry" />
+        </mxCell>
+        <mxCell id="vlan30-iface" parent="1" style="text;whiteSpace=wrap;html=1;fontColor=#04342C;" value="&lt;font size=&quot;2&quot;&gt;OPNsense sub-interface: igb1.30 · Egress allowlist: TCP 80/443 · UDP 123 · TCP 443 UDP 53&lt;/font&gt;" vertex="1">
+          <mxGeometry height="25" width="560" x="80" y="1285" as="geometry" />
+        </mxCell>
+        <mxCell id="e-opn-nas-syslog" edge="1" parent="1" source="opn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0F6E56;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="nas-bg" value="&lt;font size=&quot;2&quot;&gt;syslog UDP/514&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="310" />
+              <mxPoint x="30" y="1127" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-ntopng-nas" edge="1" parent="1" source="opn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0F6E56;dashed=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;" target="nas-bg" value="&lt;font size=&quot;2&quot;&gt;ntopng UDP/1514&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="393" />
+              <mxPoint x="20" y="1175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-nas-splunk" edge="1" parent="1" source="nas-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#BA7517;exitX=0.35;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="prox-splunk" value="&lt;font size=&quot;2&quot;&gt;filtered relay&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="489" y="990" />
+              <mxPoint x="615" y="990" />
+              <mxPoint x="615" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-nas-docker" edge="1" parent="1" source="nas-interim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#888780;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="prox-docker" value="&lt;font size=&quot;2&quot;&gt;migration in progress&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="1040" />
+              <mxPoint x="865" y="1040" />
+              <mxPoint x="865" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-opn-mcp" edge="1" parent="1" source="opn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#888780;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="nas-interim" value="&lt;font size=&quot;2&quot;&gt;MCP / LAN&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="410" />
+              <mxPoint x="700" y="960" />
+              <mxPoint x="450" y="960" />
+              <mxPoint x="450" y="1110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-bg" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Legend&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="1230" x="50" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-1" parent="legend-bg" style="text;whiteSpace=wrap;html=1;" value="&lt;font size=&quot;2&quot;&gt;Solid arrow → Active data / syslog flow&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="250" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-2" parent="legend-bg" style="text;whiteSpace=wrap;html=1;" value="&lt;font size=&quot;2&quot;&gt;Dashed arrow → MCP/API connection or planned migration&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="300" x="250" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-3" parent="legend-bg" style="text;whiteSpace=wrap;html=1;" value="&lt;font size=&quot;2&quot;&gt;Yellow = VLAN 10 Office · Purple = VLAN 20 Lab · Teal = VLAN 30 Services / NAS · Pink = IoT · Amber = Splunk VM · Green = Docker / NAS containers · Red = Kali · Blue = Windows · Gray = infrastructure&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="680" x="550" y="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
