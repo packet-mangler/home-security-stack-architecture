@@ -82,7 +82,7 @@ docs/
 - Suricata ingestion gap detection (pipeline monitoring)
 - ntopng false positive suppression (OPNsense:53 DNS resolver flows)
 - Port mirror configuration on managed switch
-- Let's Encrypt cert renewal automation
+- Let's Encrypt cert renewal automation (labtrash.duckdns.org)
 ---
 ## Note on sanitization
 This is the public version of a private repository. Specific RFC 1918 subnets, device hostnames, and hardware model numbers have been replaced with generic labels. The architecture, policy logic, and operational patterns are unmodified.
