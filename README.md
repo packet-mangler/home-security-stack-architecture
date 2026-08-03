@@ -68,7 +68,7 @@ bao-transit (NAS, Services VLAN)
 ```
 docs/
   network/
-    Home_Network_Topology_Jun2026.drawio   — Full network topology (draw.io)
+    Home_Network_Topology_Aug2026.drawio   — Full network topology (draw.io)
     Proxmox_Environment.drawio             — Proxmox compute environment detail
   policy/
     VLAN_Policy_Matrix.xlsx                — Inter-VLAN firewall policy matrix,
